@@ -11,9 +11,33 @@ Actor::Actor(float x, float y, CollType Type)
 	CollisionShape = new Collision(x, y, Type);
 }
 
+Actor::Actor(float x, float y, CollType Type, sf::Texture t)
+{
+	Pos->x = x, Pos->y = y;
+	CollisionShape = new Collision(x, y, Type);
+	SetTexture(t);
+}
+
+void Actor::SetTexture(sf::Texture t)
+{
+}
+
 void Actor::Spawn()
 {
 
+}
+
+bool Actor::Moving(int dx, int dy)
+{
+	if (true)
+	{
+		SetPos(GetPos()->x + dx, GetPos()->y + dy);
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 void Actor::SetPos(float x, float y)
