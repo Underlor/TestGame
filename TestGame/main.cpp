@@ -9,7 +9,7 @@ float offsetx = 0;
 float offsety = 0;
 using namespace sf;
 
-class Player
+class PLAYER
 {
 public:
 	float dx, dy;
@@ -17,7 +17,7 @@ public:
 	bool onGround;
 	Sprite sprite;
 	float CurrentFrame;
-	Player(Texture &image)
+	PLAYER(sf::Texture &image)
 	{
 		sprite.setTexture(image);
 		Rect = FloatRect(0, 0, 40, 50);
@@ -53,14 +53,14 @@ private:
 
 int main()
 {
-	KeyboardListener *KeyListen = new KeyboardListener();
+	//KeyboardListener *KeyListen = new KeyboardListener();
 	RenderWindow window(sf::VideoMode(SizeW, SizeH), GameName);
 	CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
 	Map TileMap("Map.ini");
 	Texture t;
 	t.loadFromFile("sprites\\fang.png");
-	Player p(t);
+	PLAYER p(t);
 	float CurrentFrame = 0;
 	Clock clock;
 	RectangleShape rectangle;

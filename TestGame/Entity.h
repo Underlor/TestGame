@@ -1,11 +1,21 @@
 #pragma once
 #include "Actor.h"
-class Entity : private Actor
+#include "../../AString.h"
+class Entity : public Actor
 {
 public:
 	Entity(float ix, float iy, CollType CollisionType) :Actor(ix, iy, CollisionType) {}
 	Entity(float ix, float iy) :Actor(ix, iy) {}
+	void Damage(int);
+	void Die(AStr::Str);
+	void SetOnGround(bool);
+	int GetHealth();
+	void SetHealth(int);
+	void SetIsDead(bool);
+	bool IsDead();
 	~Entity();
 private:
-
+	int Health;
+	bool OnGround;
+	bool isDead;
 };
